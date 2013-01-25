@@ -1,20 +1,8 @@
 development:
-  # Configure available database sessions. (required)
   sessions:
-    # Defines the default session. (required)
     default:
-      # Defines the name of the default database that Mongoid can connect to.
-      # (required).
+      uri: mongodb://medbase:M3dB@s3@linus.mongohq.com:10064/app11224674
 
-      database: app11224674
-      host: linus.mongohq.com
-      port: 10064
-      username: medbase
-      password: M3dB@s3
-      # Provides the hosts the default session can connect to. Must be an array
-      # of host:port pairs. (required)
-      hosts:
-        - linus.mongohq.com:10064
       options:
         # Change whether the session persists in safe mode by default.
         # (default: false)
