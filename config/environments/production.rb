@@ -2,7 +2,16 @@ Med::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'med.karpenko.me' }
+
+  ActionMailer::Base.smtp_settings = {
+      :address => "smtp.sendgrid.net",
+      :port => 25,
+      :domain => "med.karpenko.me",
+      :authentication => :plain,
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD']
+  }
 
   # Code is not reloaded between requests
   config.cache_classes = true
