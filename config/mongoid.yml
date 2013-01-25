@@ -60,10 +60,10 @@ test:
       options:
         consistency: :strong
 production:
+  uri: mongodb://medbase:M3dBaaaaa$3@linus.mongohq.com:10064/app11224674
   sessions:
     default:
-      hosts:
-        - linus.mongohq.com:10064
+      uri: mongodb://medbase:M3dBaaaaa$3@linus.mongohq.com:10064/app11224674
       username: medbase
       password: ​M3dBaaaaa$
       database: app11224674
