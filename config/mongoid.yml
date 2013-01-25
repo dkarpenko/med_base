@@ -1,7 +1,7 @@
 production:
   sessions:
     default:
-      uri: mongodb://medbase:M3dBaaaaa$3@linus.mongohq.com:10064/app11224674
+      uri: <%= ENV['MONGOHQ_URL'] %>
       options:
         skip_version_check: true
         safe: true
