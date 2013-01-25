@@ -1,7 +1,7 @@
 development:
   sessions:
     default:
-      uri: mongodb://medbase:M3dB@s3@linus.mongohq.com:10064/app11224674
+      uri: mongodb://medbase:M3dBaaaaa$3@linus.mongohq.com:10064/app11224674
 
       options:
         # Change whether the session persists in safe mode by default.
@@ -62,7 +62,12 @@ test:
 production:
   sessions:
     default:
-      uri: mongodb://medbase:​M3dBaaaaa$3@linus.mongohq.com:10064/app11224674
+      hosts:
+        - - linus.mongohq.com
+          - 10064
+      username: medbase
+      password: ​M3dBaaaaa$
+      database: app11224674
       options:
         skip_version_check: true
         safe: true
