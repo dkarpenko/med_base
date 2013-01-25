@@ -62,9 +62,7 @@ test:
 production:
   sessions:
     default:
-      database: med_production
-      hosts:
-        - localhost:27017
+      uri: mongodb://medbase:M3dB@s3@linus.mongohq.com:10064/app11224674
       options:
         consistency: :strong
   options:
