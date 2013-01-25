@@ -1,0 +1,79 @@
+ru:
+  project:
+    title: "MedBase"
+    title_prefix: "Med"
+    title_postfix: "Base"
+    slogan: "Учет. Анализ. Отчетность."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a lectus nunc, a luctus massa. Phasellus vestibulum eleifend orci quis feugiat. Nulla sed arcu eu risus convallis sollicitudin quis in orci. Donec condimentum, libero posuere lacinia sollicitudin, massa odio commodo ante, eu condimentum ligula nulla sit amet magna. Sed felis odio, congue non imperdiet sit amet, adipiscing id ipsum. Morbi sit amet orci quam. Proin ut elit in mauris malesuada consequat in eu tellus. Suspendisse potenti. Nullam elementum justo vitae nulla auctor rhoncus.
+
+                  Aliquam vehicula tincidunt urna pharetra sagittis. In porttitor commodo nulla, pretium gravida quam ultricies nec. Curabitur id rhoncus diam. Nunc dui erat, placerat vel fringilla in, rhoncus sed libero. Phasellus viverra facilisis egestas. Vestibulum non dolor felis. Proin ac lectus nisl. Nam hendrerit pellentesque libero, sed interdum metus imperdiet sit amet. Nullam euismod molestie tempor. Donec eu mauris vitae mauris volutpat vehicula. Praesent laoreet pellentesque risus, faucibus ullamcorper velit egestas at. Nam porta massa vitae justo sollicitudin feugiat. Nam ante tellus, viverra at faucibus vel, tincidunt at est. Cras mattis, nibh vel placerat posuere, sapien mauris cursus neque, in ornare tellus elit at nisi. Phasellus eleifend iaculis ultrices.
+
+                  Aenean interdum augue fringilla tortor ornare adipiscing. Praesent gravida eros eu dui fringilla nec euismod nibh lobortis. Morbi felis mi, volutpat aliquam ultricies a, aliquet at ipsum. Maecenas quis enim a diam luctus facilisis. Integer vel nulla massa. Nam auctor risus et ligula cursus mattis. Curabitur eget pulvinar elit. Pellentesque sed nisi augue. Suspendisse potenti. Sed eget leo dui. Mauris id pretium magna. Pellentesque ornare facilisis odio, at imperdiet quam iaculis rutrum. Cras nulla erat, volutpat sed scelerisque dignissim, mollis vitae magna. Etiam pellentesque ullamcorper sapien in euismod.
+
+                  Donec eleifend felis non leo iaculis blandit eleifend ligula accumsan. Suspendisse ac dictum mi. Etiam quam lacus, ultrices sagittis faucibus a, placerat vel orci. Proin lacinia dapibus neque. Quisque sed viverra mi. Vestibulum feugiat lacinia felis, nec eleifend enim sollicitudin eu. Quisque non pretium mauris. Sed tortor elit, mattis sed faucibus eu, faucibus vel mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam in tristique purus. Nunc dictum ornare libero, quis cursus eros luctus ut. Duis eu purus vel lorem accumsan lobortis ac quis augue. Maecenas congue pulvinar ultrices. Ut erat metus, pulvinar et mollis ac, venenatis non nunc.
+
+                  Mauris libero arcu, sodales in rutrum id, commodo eget nibh. Morbi tempus mollis tempus. Fusce et commodo ligula. In facilisis velit vitae arcu fringilla ultrices. Maecenas dignissim iaculis est quis mollis. Nam orci eros, faucibus sed venenatis sit amet, vehicula nec nisi. Curabitur vel libero magna, eget consequat purus. Cras ultrices, magna a ultrices rhoncus, est eros iaculis enim, nec mollis dui felis volutpat lacus. Nullam iaculis lacus eu elit elementum at molestie felis accumsan. Cras placerat auctor lorem at mollis."
+  mongoid:
+    errors:
+      models:
+        med_test:
+          attributes:
+            tracking_number:
+              blank: "Номер исследования обязателен для заполнения"
+  menubar:
+    home: "Главная"
+    contact_us: "Связь"
+    about: "О проекте"
+    antibodies: "Антитела"
+    med_tests: "Исследования"
+  antibodies:
+    views:
+      index: "Список антител"
+      new:
+        title: "Новое антитело"
+        link: "Добавить антитело"
+      edit:
+        title: "Изменение антитела"
+    object:
+      attributes:
+        name: "Имя антитела"
+        description: "Описание"
+        result: "Результат"
+        reaction_score: "Количественная оценка"
+        reaction_mark: "Качественная оценка"
+        mark: "Оценка"
+        q_mark:
+          positive: "положительно"
+          negative: "отрицательно"
+          falsely_positive: "ложно-положительно"
+          falsely_neitive: "ложно-отрицательно"
+  med_tests:
+    views:
+      index: "Исследования"
+
+      edit:
+        title: "Редактирование случая"
+        new_antibody_link: "Добавить антитело"
+        edit_antibody_link: "Изменить"
+        delete_antibody_link: "Удалить"
+      new:
+        link: "Зарегиситрировать случай"
+        title: "Региситрация нового случая"
+    object:
+      attributes:
+        tracking_number: "Номер"
+        description: "Описание"
+        test_date: "Дата исследования"
+        doctor_client: "Врач: заказчик"
+        antibodies: "Антитела"
+        conclusion: "Заключение"
+  view:
+    common:
+      show: "Просмотреть"
+      delete: "Удалить"
+      delete_confiramtion: "Вы действительно хотите удалить элемент?"
+      edit: "Изменить"
+      back: "Назад"
+      save_changes: "Сохранить изменения"
+      back_to_list: "Назад к списку"
+      cancel: "Отменить"

@@ -1,0 +1,26 @@
+%table.table.table-striped
+  %tr
+    %th= t('antibodies.object.attributes.name')
+    %th= t('antibodies.object.attributes.description')
+    %th= t('antibodies.object.attributes.mark')
+    %th= t('antibodies.object.attributes.result')
+    %th
+  - antibodies.each do |antibody|
+    %tr
+      %td
+        %a{href: edit_med_test_antibody_path(antibody.med_test, antibody), title: t('med_tests.views.edit.edit_antibody_link') + ": " + antibody.name , 'data-toggle' => "modal", 'data-target' => "#modal_dialog"}
+          =antibody.name
+      %td
+        %span.tooltip_element{href: "#", 'data-title'=> antibody.description }= truncate(antibody.description)
+      %td
+        %div= t('antibodies.object.attributes.q_mark.'+ antibody.reaction_mark.to_s) if antibody.reaction_mark
+        %div= antibody.reaction_score_score if antibody.reaction_score_score
+        %div= antibody.reaction_score_percentage + "%" if antibody.reaction_score_percentage
+      %td
+        %span.tooltip_element{href: "#", 'data-title'=> antibody.result }= truncate(antibody.result)
+
+      %td
+        .pull-right
+          %a.btn.btn-danger{href: med_test_antibody_path(antibody.med_test, antibody), title: t('med_tests.views.edit.delete_antibody_link') + ": " + antibody.name ,  rel: "nofollow", "data-method" =>"delete", "data-confirm" => t('view.common.delete_confiramtion')}
+            %i.icon-white.icon-remove
+            =t('med_tests.views.edit.delete_antibody_link')

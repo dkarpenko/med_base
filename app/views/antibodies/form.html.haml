@@ -1,0 +1,46 @@
+= form_for([@med_test, @antibody], html: {class: 'form-horizontal'}) do |f|
+  - if @antibody.errors.any?
+    .alert.alert-error
+      %h2
+        = pluralize(@antibody.errors.count, "error")
+        prohibited this antibody from being saved:
+      %ul
+        - @antibody.errors.full_messages.each do |msg|
+          %li= msg
+  %fieldset
+    .control-group
+      = f.label(:name, t('antibodies.object.attributes.name'), class: 'control-label')
+      .controls
+        = f.text_field(:name, :class => 'input-xlarge typeahead data-api', "data-provide" => "typeahead", "data-source" =>  @antibody_names.to_json, autocomplete: "off")
+    .control-group
+      = f.label(:description, t('antibodies.object.attributes.description'), class: 'control-label')
+      .controls
+        = f.text_area(:description, class: 'input-xlarge', rows: 1)
+    .control-group
+      = f.label(:description, t('antibodies.object.attributes.result'), class: 'control-label')
+      .controls
+        = f.text_area(:result, class: 'input-xlarge', rows: 1)
+    .control-group
+      = f.label(:reaction_mark, t('antibodies.object.attributes.reaction_mark'), class: 'control-label')
+      .controls
+        - $REACTION_MARKS_Q.each do |val|
+          %label.radio
+            = t('antibodies.object.attributes.q_mark.'+ val.to_s)
+            = f.radio_button :reaction_mark, val
+
+    .control-group
+      = f.label(:reaction_score_percentage, t('antibodies.object.attributes.reaction_score'), class: 'control-label')
+      .controls
+        .input-append
+          = f.text_field(:reaction_score_percentage, :class => 'input-xlarge', autocomplete: "off")
+          %span.add-on %
+
+    .control-group
+      .controls
+        - [ '0', '1', '2', '3'].each do |theme|
+          %label.radio.inline
+            =theme
+            =f.radio_button :reaction_score_score, theme
+
+
+

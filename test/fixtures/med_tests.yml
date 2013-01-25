@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  test_date: 2012-07-02
+  tracking_number: 1
+  patient_name: MyString
+  description: MyText
+  conclusion: MyText
+
+two:
+  test_date: 2012-07-02
+  tracking_number: 1
+  patient_name: MyString
+  description: MyText
+  conclusion: MyText

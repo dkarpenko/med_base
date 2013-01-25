@@ -1,0 +1,18 @@
+== Welcome to MedBase
+
+== Getting Started
+
+0.1 Install and configure MongoDB
+
+0.2 Install and configure Ruby 1.9.3
+
+0.3 Install gem <tt>bundler</tt>
+
+0.4 Install gems with <tt>bundle install</tt> command
+
+1. Update <tt>/config/mongoid.yml<tt> with your DB settings.
+
+2. Change directory to <tt>med</tt> and start the web server:
+       <tt>rails s</tt>
+
+3. Go to http://localhost:3000/
