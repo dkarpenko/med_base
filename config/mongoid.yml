@@ -62,10 +62,7 @@ test:
 production:
   sessions:
     default:
-      uri: mongodb://medbase:M3dB@s3@linus.mongohq.com:10064/app11224674
+      uri: mongodb://medbase:​M3dBaaaaa$3@linus.mongohq.com:10064/app11224674
       options:
-        consistency: :strong
-  options:
-    protect_sensitive_fields: true
-    use_activesupport_time_zone: true
-    use_utc: false
+        skip_version_check: true
+        safe: true
