@@ -14,4 +14,6 @@ class MedTest
   attr_accessor :body_ids
 
   embeds_many :antibodies
+
+  field :test_purpose, type: String
 end

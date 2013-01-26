@@ -24,7 +24,10 @@
       = f.label(:doctor_client, t('med_tests.object.attributes.doctor_client'), class: 'control-label')
       .controls
         = f.text_field(:doctor_client, :class => 'input-xlarge typeahead data-api', "data-provide" => "typeahead", "data-source" =>  @doctors_names.to_json, autocomplete: "off")
-
+    .control-group
+      = f.label(:doctor_client, t('med_tests.object.attributes.test_purpose'), class: 'control-label')
+      .controls
+        = f.text_field(:test_purpose, :class => 'input-xlarge typeahead data-api', "data-provide" => "typeahead", "data-source" =>  @test_purposes.to_json, autocomplete: "off")
     .control-group
       = f.label(:description, t('med_tests.object.attributes.description'), class: 'control-label')
       .controls

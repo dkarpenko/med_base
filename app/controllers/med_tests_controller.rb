@@ -2,7 +2,7 @@
 class MedTestsController < ApplicationController
   before_filter :authenticate_user!
 
-  before_filter :prepare_doctors_names, only: [:edit , :new]
+  before_filter :prepare_dictionary_data, only: [:edit , :new]
 
   # GET /med_tests
   # GET /med_tests.json
@@ -81,8 +81,9 @@ class MedTestsController < ApplicationController
     end
   end
 
-  def prepare_doctors_names
+  def prepare_dictionary_data
     # TODO Cache this values
-      @doctors_names = MedTest.limit(200).collect{|t| t.doctor_client }.uniq.compact
+      @doctors_names = MedTest.limit(500).collect{|t| t.doctor_client }.uniq.compact
+      @test_purposes = MedTest.limit(500).collect{|t| t.test_purpose }.uniq.compact
   end
 end

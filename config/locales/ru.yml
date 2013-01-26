@@ -63,12 +63,13 @@ ru:
         title: "Региситрация нового случая"
     object:
       attributes:
-        tracking_number: "Номер"
+        tracking_number: "Гистологический номер"
         description: "Описание"
         test_date: "Дата исследования"
-        doctor_client: "Врач: заказчик"
+        doctor_client: "Врач (заказчик)"
         antibodies: "Антитела"
         conclusion: "Заключение"
+        test_purpose: "Тип исследования"
   view:
     common:
       show: "Просмотреть"
