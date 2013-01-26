@@ -9,9 +9,13 @@ jQuery ->
   ($ '.date').datepicker({format: 'yyyy-mm-dd', weekStart: 1}).on 'changeDate', (e) ->
     $(this).datepicker('hide')
 
+  ($ 'form:first *:input[type!=hidden]&[readonly!=readonly]:first').focus()
 
   ($ "#modal_dialog").on 'hide', (e)->
     $(this).removeData('modal')
+
+  ($ "#modal_dialog").on 'shown', (e)->
+    $(this).find('form:first *:input[type!=hidden]:first').focus()
 
   modal_dialog_handler = (e) ->
     $('#modal_dialog .modal-header h3').html(this.title ? 'Modal Dialog')
