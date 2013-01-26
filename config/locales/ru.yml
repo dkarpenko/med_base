@@ -22,7 +22,8 @@ ru:
               blank: "Номер исследования обязателен для заполнения"
   menubar:
     home: "Главная"
-    login: "Вход"
+    login: "Войти в систему"
+    logout: "Выход"
     contact_us: "Связь"
     about: "О проекте"
     antibodies: "Антитела"
