@@ -28,6 +28,15 @@
       = f.label(:doctor_client, t('med_tests.object.attributes.test_purpose'), class: 'control-label')
       .controls
         = f.text_field(:test_purpose, :class => 'input-xlarge typeahead data-api', "data-provide" => "typeahead", "data-source" =>  @test_purposes.to_json, autocomplete: "off")
+    - if @med_test.new_record?
+      .control-group
+        = f.label(:tracking_number, t('med_tests.object.attributes.antibodies'), class: 'control-label')
+        .controls
+          .input-large.uneditable-input.tokenahead
+            .measurer
+            .tokens
+            %input{ name: "default_antibodies", type: "text", "data-source" =>  @antibody_names.to_json, "data-provide" => "tokenahead", autocomplete: "off", class: "data-api tokenahead-input"}
+
     .control-group
       = f.label(:description, t('med_tests.object.attributes.description'), class: 'control-label')
       .controls
@@ -37,7 +46,7 @@
       .controls
         = f.text_field(:patient_name, :class => 'input-xlarge', autocomplete: "off")
 
-    -if !@med_test.new_record?
+    -unless @med_test.new_record?
       .control-group
         %label.control-label= t('antibodies.views.index')
         .controls
@@ -47,15 +56,6 @@
         = f.label(:conclusion, t('med_tests.object.attributes.conclusion'), class: 'control-label')
         .controls
           = f.text_area(:conclusion, :class => 'input-xlarge', rows: 3)
-    - else
-      .control-group
-        = f.label(:tracking_number, t('med_tests.object.attributes.antibodies'), class: 'control-label')
-        .controls
-          .input-large.uneditable-input.tokenahead
-            .measurer
-            .tokens
-            %input{ name: "default_antibodies", type: "text", "data-source" =>  @antibody_names.to_json, "data-provide" => "tokenahead", autocomplete: "off", class: "data-api tokenahead-input"}
-
 
     .form-actions
       = f.submit(t('med_tests.views.edit.save_and_create'), class: 'btn btn-primary', name: "save_create") if @med_test.new_record?
