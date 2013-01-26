@@ -41,3 +41,9 @@ jQuery ->
       form.append($('<div/>').addClass('hide').append($('<input/>').addClass('modal_form_submit').attr('type', 'submit').val('Save')))
     # submit form
     form.find('input[type=submit]').trigger('click')
+
+
+  #  Submit form on Ctrl + Enter
+  ($ 'form').live 'keydown', (e) ->
+    if (e.ctrlKey && e.keyCode == 13)
+        $(this).find('input[type=submit]').trigger('click')
