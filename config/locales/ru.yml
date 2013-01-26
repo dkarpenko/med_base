@@ -71,6 +71,7 @@ ru:
         antibodies: "Антитела"
         conclusion: "Заключение"
         test_purpose: "Тип исследования"
+        patient_name: "Имя пациента"
   view:
     common:
       show: "Просмотреть"
