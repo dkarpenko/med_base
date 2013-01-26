@@ -42,8 +42,6 @@
         %label.control-label= t('antibodies.views.index')
         .controls
           = render :partial => 'antibodies/list', :locals => {:antibodies => @med_test.antibodies}
-          = link_to t('med_tests.views.edit.new_antibody_link'), new_med_test_antibody_path(@med_test), role: "button", title: t('med_tests.views.edit.new_antibody_link'), class: "btn pull-right", 'data-toggle' => "modal", 'data-target' => "#modal_dialog"
-
 
       .control-group
         = f.label(:conclusion, t('med_tests.object.attributes.conclusion'), class: 'control-label')

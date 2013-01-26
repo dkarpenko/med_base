@@ -4,7 +4,7 @@
     %th= t('antibodies.object.attributes.description')
     %th= t('antibodies.object.attributes.mark')
     %th= t('antibodies.object.attributes.result')
-    %th
+    %th= link_to t('med_tests.views.edit.new_antibody_link'), new_med_test_antibody_path(@med_test), role: "button", title: t('med_tests.views.edit.new_antibody_link'), class: "btn pull-right", 'data-toggle' => "modal", 'data-target' => "#modal_dialog"
   - antibodies.each do |antibody|
     %tr
       %td
