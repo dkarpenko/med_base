@@ -13,7 +13,7 @@
       = f.label(:test_date, t('med_tests.object.attributes.test_date'), class: 'control-label')
       .controls
         .input-append.date{ 'data-date' => @med_test.test_date }
-          = f.text_field :test_date, class: 'span2', readonly: true
+          = f.text_field :test_date, class: 'span2', readonly: false
           %span.add-on
             %i.icon-calendar
     .control-group
@@ -40,15 +40,13 @@
           = link_to t('med_tests.views.edit.new_antibody_link'), new_med_test_antibody_path(@med_test), role: "button", title: t('med_tests.views.edit.new_antibody_link'), class: "btn pull-right", 'data-toggle' => "modal", 'data-target' => "#modal_dialog"
 
 
-
-
       .control-group
         = f.label(:conclusion, t('med_tests.object.attributes.conclusion'), class: 'control-label')
         .controls
           = f.text_area(:conclusion, :class => 'input-xlarge', rows: 3)
 
     .form-actions
-      = f.submit(t('view.common.save_changes'), class: 'btn btn-primary')
+      = f.submit(@med_test.new_record? ? t('med_tests.views.new.link') : t('med_tests.views.edit.update_and_create'), class: 'btn btn-primary')
       = link_to(t('view.common.cancel'), :back,  class: "btn")
       =link_to(t('view.common.back_to_list'), med_tests_path, class: "btn pull-right")
 

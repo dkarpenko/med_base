@@ -56,6 +56,7 @@ ru:
       edit:
         title: "Редактирование случая"
         new_antibody_link: "Добавить антитело"
+        update_and_create: "Сохранить и зарегистрировать новый случай"
         edit_antibody_link: "Изменить"
         delete_antibody_link: "Удалить"
       new:

@@ -63,7 +63,7 @@ class MedTestsController < ApplicationController
 
     respond_to do |format|
       if @med_test.update_attributes(params[:med_test])
-        format.html { redirect_to edit_med_test_path(@med_test), notice: 'Med test was successfully updated.' }
+        format.html { redirect_to new_med_test_path, notice: 'Med test was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
