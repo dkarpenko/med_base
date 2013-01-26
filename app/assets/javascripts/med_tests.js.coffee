@@ -4,7 +4,14 @@ jQuery ->
 #    url = ($ @).attr('href')
 #    ($ target).modal({remote: url})
 
-  ($ ".tooltip_element").tooltip();
+  $('.tokenahead').tokenahead({
+    source: ->
+      this.$originalInput.data("source")
+    ,
+    matcher:  (item) ->
+      item = $.trim(item)
+      return item.toLowerCase().substr(0, this.query.length).indexOf(this.query.toLowerCase()) != -1
+  })
 
   ($ '.date').datepicker({format: 'yyyy-mm-dd', weekStart: 1}).on 'changeDate', (e) ->
     $(this).datepicker('hide')

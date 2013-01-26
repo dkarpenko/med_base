@@ -49,6 +49,12 @@ class MedTestsController < ApplicationController
 
     respond_to do |format|
       if @med_test.save
+        if(params[:default_antibodies])
+          params[:default_antibodies].split(",").each do |antibody_name|
+            @med_test.antibodies.create!({name: antibody_name})
+          end
+        end
+
         format.html { redirect_to edit_med_test_path(@med_test), notice: 'Med test was successfully created.' }
       else
         format.html { render action: "new" }
@@ -83,7 +89,11 @@ class MedTestsController < ApplicationController
 
   def prepare_dictionary_data
     # TODO Cache this values
-      @doctors_names = MedTest.limit(500).collect{|t| t.doctor_client }.uniq.compact
-      @test_purposes = MedTest.limit(500).collect{|t| t.test_purpose }.uniq.compact
+      latest_med_tests = MedTest.limit(500)
+
+      @doctors_names = latest_med_tests.collect{|t| t.doctor_client }.uniq.compact
+      @test_purposes = latest_med_tests.collect{|t| t.test_purpose }.uniq.compact
+      @antibody_names = latest_med_tests.collect{|t| t.antibodies }.flatten().collect{|a| a.name }.uniq.compact
+
   end
 end
