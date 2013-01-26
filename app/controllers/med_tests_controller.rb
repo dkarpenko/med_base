@@ -55,7 +55,12 @@ class MedTestsController < ApplicationController
           end
         end
 
-        format.html { redirect_to edit_med_test_path(@med_test), notice: 'Med test was successfully created.' }
+        format.html do
+
+          redirect_to params[:save_create] ? new_med_test_path :
+                          edit_med_test_path(@med_test), notice: 'Med test was successfully created.'
+
+        end
       else
         format.html { render action: "new" }
       end

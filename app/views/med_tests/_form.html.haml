@@ -58,9 +58,10 @@
 
 
     .form-actions
-      = f.submit(@med_test.new_record? ? t('med_tests.views.new.link') : t('med_tests.views.edit.update_and_create'), class: 'btn btn-primary')
+      = f.submit(t('med_tests.views.edit.save_and_create'), class: 'btn btn-primary', name: "save_create") if @med_test.new_record?
+      = f.submit(t('view.common.save_changes'), class: 'btn', name: "save")
       = link_to(t('view.common.cancel'), :back,  class: "btn")
-      =link_to(t('view.common.back_to_list'), med_tests_path, class: "btn pull-right")
+      = link_to(t('view.common.back_to_list'), med_tests_path, class: "btn pull-right")
 
 
 #modal_dialog.modal.fade.hide
