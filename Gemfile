@@ -26,11 +26,15 @@ end
 group :test do
   gem 'capybara'
   gem 'cucumber-rails'
-  gem 'rspec-rails', '>= 2.0.0.beta.12'
+  gem 'rspec-rails'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner', :require => false
+end
+
+group :development, :test do
+  gem 'rspec-rails'
 end
 
 

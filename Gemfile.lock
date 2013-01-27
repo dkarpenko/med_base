@@ -216,7 +216,7 @@ DEPENDENCIES
   mongoid-rspec
   rack-methodoverride-with-params
   rails
-  rspec-rails (>= 2.0.0.beta.12)
+  rspec-rails
   ruby_parser
   sass-rails (~> 3.2.3)
   therubyracer
