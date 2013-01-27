@@ -1,4 +1,7 @@
-%h1=t('med_tests.views.index')
+%div.row
+  %div.span6
+    %h3= t('med_tests.views.index')
+  %div.span6= link_to( t('med_tests.views.new.link'), new_med_test_path, class: "btn btn-primary btn-large pull-right")
 
 %table.table.table-striped
   %tr
@@ -28,4 +31,3 @@
 
 %br
 
-= link_to( t('med_tests.views.new.link'), new_med_test_path, class: "btn btn-primary btn-large pull-right")
