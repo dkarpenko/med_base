@@ -62,8 +62,6 @@ test:
   sessions:
     default:
       database: med_test
-      username: travis
-      password: travis
       hosts:
         - localhost:27017
       options:
