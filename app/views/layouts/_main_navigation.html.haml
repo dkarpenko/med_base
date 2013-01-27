@@ -1,0 +1,7 @@
+#nav-collapse
+  %ul.nav.nav-pills
+    - if user_signed_in?
+      %li{class: params[:controller] == "index" && params[:action] == "home" && "active"}= link_to(t('menubar.home'), index_home_path)
+      %li{class: params[:controller] == "med_tests" && "active"}= link_to(t('menubar.med_tests'), med_tests_path)
+    = render :partial => "layouts/security_nav"
+

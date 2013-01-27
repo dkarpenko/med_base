@@ -1,0 +1,31 @@
+%h1=t('med_tests.views.index')
+
+%table.table.table-striped
+  %tr
+    %th= t('med_tests.object.attributes.test_date')
+    %th= t('med_tests.object.attributes.tracking_number')
+    %th= t('med_tests.object.attributes.test_purpose')
+    %th= t('med_tests.object.attributes.doctor_client')
+    %th= t('med_tests.object.attributes.antibodies')
+    %th= t('med_tests.object.attributes.conclusion')
+    %th
+
+  - @med_tests.each do |med_test|
+    %tr
+      %td= med_test.test_date
+      %td= link_to(med_test.tracking_number, edit_med_test_path(med_test))
+      %td= med_test.test_purpose
+      %td= med_test.doctor_client
+      %td
+        - med_test.antibodies.each do |antibody|
+          %span.label.label-info= antibody.name
+      %td
+        %span.tooltip_element{href: "#", 'data-title'=> med_test.conclusion }= truncate(med_test.conclusion)
+
+      %td
+        .pull-right
+          = link_to(t('view.common.delete'), med_test, :confirm => t('view.common.delete_confiramtion'), :method => :delete, class: "btn btn-danger")
+
+%br
+
+= link_to( t('med_tests.views.new.link'), new_med_test_path, class: "btn btn-primary btn-large pull-right")
