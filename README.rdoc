@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dkarpenko/med_base.png?branch=master)](https://travis-ci.org/dkarpenko/med_base)
+
 == Welcome to MedBase
 
 == Getting Started
