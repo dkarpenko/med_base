@@ -14,9 +14,6 @@ Med::Application.routes.draw do
 
   get "index/home"
 
-  get "index/contact_us"
-
-  get "index/about"
 
   #resources :antibodies do
   #  get 'search', :on => :collection, :defaults => { :format => 'json' }
