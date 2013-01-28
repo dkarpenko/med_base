@@ -31,6 +31,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner', :require => false
+  gem 'spork'
 end
 
 group :development, :test do
