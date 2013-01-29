@@ -25,7 +25,7 @@ class MedTestsController < ApplicationController
 
     if @med_test.save
 
-      if (params[:default_antibodies].empty?)
+      unless (params[:default_antibodies].empty?)
         params[:default_antibodies].split(",").each do |antibody_name|
           @med_test.antibodies.create!({name: antibody_name})
         end
