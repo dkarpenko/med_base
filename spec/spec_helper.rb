@@ -4,7 +4,7 @@ require 'spork'
 #require 'spork/ext/ruby-debug'
 
 Spork.prefork do
-  # This file is copied to spec/ when you run 'rails generate rspec:install'
+
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
@@ -18,23 +18,16 @@ Spork.prefork do
 
   require 'database_cleaner'
 
-  DatabaseCleaner.strategy = :truncation
-  DatabaseCleaner.clean
-
-
 end
 
 Spork.each_run do
-  DatabaseCleaner.start
 end
 
 Spork.after_each_run do
-  DatabaseCleaner.clean
 end
 
 
 RSpec.configure do |config|
-  include Mongoid::Matchers
 
   # ## Mock Framework
   #
@@ -54,5 +47,14 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.orm = "mongoid"
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.clean
+  end
 
 end
