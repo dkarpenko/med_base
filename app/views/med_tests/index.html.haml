@@ -29,5 +29,4 @@
         .pull-right
           = link_to(t('view.common.delete'), med_test, :confirm => t('view.common.delete_confiramtion'), :method => :delete, class: "btn btn-danger")
 
-%br
-
+%div.pagination-centered=will_paginate @med_tests

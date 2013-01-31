@@ -3,7 +3,7 @@ class MedTestsController < ApplicationController
   before_filter :prepare_dictionary_data, only: [:edit, :new]
 
   def index
-    @med_tests = MedTest.all.desc(:created_at)
+    @med_tests = MedTest.all.desc(:created_at).paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
