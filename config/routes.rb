@@ -1,5 +1,8 @@
 Med::Application.routes.draw do
 
+  resources :statistics
+
+
   devise_for :users
   resources :users
 
@@ -12,7 +15,7 @@ Med::Application.routes.draw do
 
 
 
-  get "index/home"
+  get 'index/home'
 
 
   #resources :antibodies do
