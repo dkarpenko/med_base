@@ -16,3 +16,7 @@
        <tt>rails s</tt>
 
 3. Go to http://localhost:3000/
+
+
+4. Run tests with coverage
+`COVERAGE=true bundle exec rake spec`
