@@ -2,11 +2,8 @@ source :rubygems
 ruby '1.9.3'
 
 gem 'thin'
-
 gem 'rails'
-
-
-gem "mongoid"
+gem 'mongoid'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -39,10 +36,7 @@ group :development, :test do
   gem 'simplecov'
 end
 
-
-
-gem "devise", ">= 2.1.2"
-
+gem 'devise', '>= 2.1.2'
 
 # JavasScript libs
 gem 'jquery-rails'
@@ -77,8 +71,12 @@ end
 # gem 'debugger'
 
 gem 'haml-rails'
-gem "haml"
-gem "hpricot"
-gem "ruby_parser"
+gem 'haml'
+gem 'hpricot'
+gem 'ruby_parser'
+
+# Pagination gems
+gem 'will_paginate_mongoid'
+gem 'bootstrap-will_paginate'
 
 gem 'rack-methodoverride-with-params'

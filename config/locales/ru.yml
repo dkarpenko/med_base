@@ -82,3 +82,7 @@ ru:
       save_changes: "Сохранить изменения"
       back_to_list: "Назад к списку"
       cancel: "Отменить"
+
+  will_paginate:
+    next_label: "След"
+    previous_label: "Пред"
