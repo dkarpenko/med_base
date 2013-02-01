@@ -60,7 +60,7 @@ ru:
         edit_antibody_link: "Изменить"
         delete_antibody_link: "Удалить"
       new:
-        link: "Зарегиситрировать случай"
+        link: "Зарегистрировать случай"
         title: "Региситрация нового случая"
     object:
       attributes:
