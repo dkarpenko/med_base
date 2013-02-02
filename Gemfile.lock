@@ -93,6 +93,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.7.6)
     libv8 (3.11.8.13)
+    logglier (0.2.8)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -110,6 +111,7 @@ GEM
       rspec (>= 2.9)
     moped (1.3.2)
     multi_json (1.5.0)
+    newrelic_rpm (3.5.6.46)
     nokogiri (1.5.6)
     origin (1.0.11)
     orm_adapter (0.4.0)
@@ -223,9 +225,11 @@ DEPENDENCIES
   haml-rails
   hpricot
   jquery-rails
+  logglier
   modernizr-rails
   mongoid
   mongoid-rspec
+  newrelic_rpm
   rack-methodoverride-with-params
   rails
   rspec-rails
