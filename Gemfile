@@ -50,6 +50,8 @@ gem 'modernizr-rails'
 
 # Heroku deployment requirements
 group :production do
+  gem 'newrelic_rpm'
+  gem 'logglier'
    #gem 'therubyracer'
    #gem 'pg'
 end
