@@ -28,6 +28,7 @@ ru:
     about: "О проекте"
     antibodies: "Антитела"
     med_tests: "Исследования"
+    med_test_statistic: "Статистика"
   antibodies:
     views:
       index: "Список антител"
@@ -86,3 +87,10 @@ ru:
   will_paginate:
     next_label: "След"
     previous_label: "Пред"
+  statistics:
+    view:
+      index: "Статистическая информация"
+    object:
+      type:
+        antibodies_test_type: "Типы исследований в течении года"
+        antibodies_date: "Использование антител в течении года"
