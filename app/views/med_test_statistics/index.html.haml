@@ -1,0 +1,5 @@
+.page-header
+  %h1= t('statistics.view.index')
+
+- @statistics.each do |statistic|
+  = render partial: 'statistic', :locals => { :statistic => statistic }

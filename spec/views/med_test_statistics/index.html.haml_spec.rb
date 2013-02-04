@@ -1,10 +1,9 @@
 require 'spec_helper'
 
-describe 'statistics/index' do
+describe 'med_test_statistics/index' do
   before(:each) do
     assign(:statistics, [
-      stub_model(Statistic),
-      stub_model(Statistic)
+        FactoryGirl.build(:med_test_statistic), FactoryGirl.build(:med_test_statistic)
     ])
   end
 
