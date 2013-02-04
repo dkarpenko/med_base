@@ -29,7 +29,7 @@ class Statistic::StatisticSuite
   def normalize_data
     all_keys= @statistic_rows.collect { |row_key, row_data| row_data.row_keys }.flatten.compact.uniq.sort
 
-    statistic_data = @statistic_rows.collect do |row_key, row_data|
+    statistic_data = @statistic_rows.sort.map do |row_key, row_data|
       row_data.normalize_row(all_keys).insert(0, row_key)
     end
 
