@@ -25,7 +25,7 @@ class MedTestsController < ApplicationController
 
     if @med_test.save
       unless  params[:default_antibodies].blank?
-        params[:default_antibodies].split(",").each do |antibody_name|
+        params[:default_antibodies].split(',').each do |antibody_name|
           @med_test.antibodies.create!({name: antibody_name})
         end
       end
@@ -65,9 +65,9 @@ class MedTestsController < ApplicationController
     # TODO Cache this values
     latest_med_tests = MedTest.limit(500)
 
-    @doctors_names = latest_med_tests.collect { |t| t.doctor_client }.uniq.compact
-    @test_purposes = latest_med_tests.collect { |t| t.test_purpose }.uniq.compact
-    @antibody_names = latest_med_tests.collect { |t| t.antibodies }.flatten().collect { |a| a.name }.uniq.compact
+    @doctors_names = latest_med_tests.collect { |t| t.doctor_client }.uniq.compact.sort
+    @test_purposes = latest_med_tests.collect { |t| t.test_purpose }.uniq.compact.sort
+    @antibody_names = latest_med_tests.collect { |t| t.antibodies }.flatten().collect { |a| a.name }.uniq.compact.sort
 
   end
 

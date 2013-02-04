@@ -54,7 +54,7 @@ class AntibodiesController < ApplicationController
 
   def prepate_antibody_names
     # TODO Cache this values
-    @antibody_names = MedTest.limit(200).collect{|t| t.antibodies }.flatten().collect{|a| a.name }.uniq.compact
+    @antibody_names = MedTest.limit(200).collect{|t| t.antibodies }.flatten().collect{|a| a.name }.uniq.compact.sort
   end
 
 
