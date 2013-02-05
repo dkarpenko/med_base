@@ -1,8 +1,9 @@
 GIT
   remote: https://github.com/dkarpenko/jquery-tablesorter-rails.git
-  revision: c6abf4de61a5909fd6bf59a5f52e543d679ff05e
+  revision: 97d6198a8213339197cffad8c3f16f74c1288ef3
+  branch: upgrade_to_2_7_5
   specs:
-    jquery-tablesorter (1.4.0)
+    jquery-tablesorter (1.4.1)
       railties (~> 3.1)
 
 GEM
