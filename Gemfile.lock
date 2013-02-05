@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:dkarpenko/jquery-tablesorter-rails.git
+  revision: c6abf4de61a5909fd6bf59a5f52e543d679ff05e
+  specs:
+    jquery-tablesorter (1.4.0)
+      railties (~> 3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -60,7 +67,7 @@ GEM
       nokogiri (>= 1.5.0)
     daemons (1.1.9)
     database_cleaner (0.9.1)
-    devise (2.2.2)
+    devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
@@ -70,14 +77,14 @@ GEM
     eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    factory_girl (4.1.0)
+    factory_girl (4.2.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.1.0)
-      factory_girl (~> 4.1.0)
+    factory_girl_rails (4.2.0)
+      factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     ffi (1.3.1)
-    gherkin (2.11.5)
-      json (>= 1.4.6)
+    gherkin (2.11.6)
+      json (>= 1.7.6)
     haml (3.1.7)
     haml-rails (0.3.5)
       actionpack (>= 3.1, < 4.1)
@@ -93,19 +100,18 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.7.6)
     libv8 (3.11.8.13)
-    logglier (0.2.8)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.19)
+    mime-types (1.20.1)
     modernizr-rails (2.6.1)
-    mongoid (3.0.19)
+    mongoid (3.0.21)
       activemodel (~> 3.1)
       moped (~> 1.2)
       origin (~> 1.0)
       tzinfo (~> 0.3.22)
-    mongoid-rspec (1.5.6)
+    mongoid-rspec (1.6.0)
       mongoid (>= 3.0.1)
       rake
       rspec (>= 2.9)
@@ -121,7 +127,7 @@ GEM
       rack (>= 0.4)
     rack-methodoverride-with-params (1.0.0)
       rack (~> 1)
-    rack-ssl (1.3.2)
+    rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -151,7 +157,7 @@ GEM
     rspec-core (2.12.2)
     rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
-    rspec-mocks (2.12.1)
+    rspec-mocks (2.12.2)
     rspec-rails (2.12.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -201,7 +207,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
-    websocket (1.0.6)
+    websocket (1.0.7)
     will_paginate (3.0.4)
     will_paginate_mongoid (1.1.0)
       mongoid (>= 2.4)
@@ -225,7 +231,7 @@ DEPENDENCIES
   haml-rails
   hpricot
   jquery-rails
-  logglier
+  jquery-tablesorter!
   modernizr-rails
   mongoid
   mongoid-rspec

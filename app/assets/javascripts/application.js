@@ -5,4 +5,6 @@
 //= require bootstrap/bootstrap-datepicker
 //= require bootstrap/bootstrap-tokenahead
 
+//= require jquery-tablesorter
+
 //= require_tree .

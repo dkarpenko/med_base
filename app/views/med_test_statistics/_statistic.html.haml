@@ -1,10 +1,12 @@
 %h2=t("statistics.object.type.#{statistic.type_key}")
-%table.table.table-hover
-  %tr
-    %th
-    - statistic.headers.each do |header|
-      %th=header
-  - statistic.statistic_data.each do |statistic_row|
+%table.table.tablesorter.tablesorter-bootstrap
+  %thead
     %tr
-    - statistic_row.each do |statistic_cell|
-      %td= statistic_cell
+      %th.header
+      - statistic.headers.each do |header|
+        %th.header.tablesorter-header=header
+  %tbody
+    - statistic.statistic_data.each do |statistic_row|
+      %tr
+        - statistic_row.each do |statistic_cell|
+          %td= statistic_cell
