@@ -62,7 +62,7 @@ ru:
         delete_antibody_link: "Удалить"
       new:
         link: "Зарегистрировать случай"
-        title: "Региситрация нового случая"
+        title: "Регистрация нового случая"
     object:
       attributes:
         tracking_number: "Гистологический номер"
