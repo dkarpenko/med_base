@@ -1,5 +1,3 @@
-require 'logglier'
-
 Med::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -52,7 +50,6 @@ Med::Application.configure do
 
   # Use a different logger for distributed setups
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-  config.logger = Logglier.new(ENV['LOGGLY_URL']) if ENV['LOGGLY_URL']
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
