@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/dkarpenko/jquery-tablesorter-rails.git
-  revision: 8715a183e8660cbe51d23166d6bdedb94ac32b27
-  branch: upgrade_to_2_7_5
+  remote: git://github.com/linjunpop/jquery-tablesorter-rails.git
+  revision: 0eae812ca4334836fd911ec9abafe25f7c914199
+  branch: master
   specs:
     jquery-tablesorter (1.4.1)
       railties (~> 3.1)
@@ -148,7 +148,7 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.3)
-    rdoc (3.12)
+    rdoc (3.12.1)
       json (~> 1.4)
     ref (1.0.2)
     rspec (2.12.0)
