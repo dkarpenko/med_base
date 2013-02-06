@@ -54,7 +54,7 @@ module Med
     config.assets.enabled = true
 
     config.assets.prefix = '/static'
-    config.assets.precompile += %w(application.js med_tests.js application.css bootstrap_fix.css bootstrap.js )
+    config.assets.precompile += %w(application.js med_tests.js med_test_statistics.js application.css bootstrap_fix.css bootstrap.js )
     config.assets.precompile += %w(jquery-tablesorter.js)
     #config.assets.precompile += ['application.js']
 
