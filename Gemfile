@@ -80,4 +80,7 @@ gem 'ruby_parser'
 gem 'will_paginate_mongoid'
 gem 'bootstrap-will_paginate'
 
+# Table Sorting
+gem 'jquery-tablesorter', git: 'https://github.com/dkarpenko/jquery-tablesorter-rails.git', branch: 'upgrade_to_2_7_5'
+
 gem 'rack-methodoverride-with-params'

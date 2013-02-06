@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/dkarpenko/jquery-tablesorter-rails.git
+  revision: 8715a183e8660cbe51d23166d6bdedb94ac32b27
+  branch: upgrade_to_2_7_5
+  specs:
+    jquery-tablesorter (1.4.1)
+      railties (~> 3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -224,6 +232,7 @@ DEPENDENCIES
   haml-rails
   hpricot
   jquery-rails
+  jquery-tablesorter!
   modernizr-rails
   mongoid
   mongoid-rspec
