@@ -13,6 +13,8 @@ module MedStatistic
 
       MedTestStatistic.find_or_create_by({type_key: 'antibodies_date'}).update_attributes(antibody_statistic(x_function, aggregation_function))
       MedTestStatistic.find_or_create_by({type_key: 'antibodies_test_type'}).update_attributes(test_purpose_statistic(x_function, aggregation_function))
+
+      MedTestStatistic.find_or_create_by({type_key: 'tests_total'}).update_attributes(tests_total(x_function))
     end
 
 
@@ -27,6 +29,18 @@ module MedStatistic
     def self.antibody_statistic(x_function, aggregation_function)
       y_function = Proc.new do |element|
         element.antibodies.collect { |antibody| antibody.name }.compact.uniq
+      end
+      self.get_statistic(y_function, x_function, aggregation_function)
+    end
+
+    def self.tests_total(x_function)
+
+      aggregation_function = Proc.new do |elements|
+        elements.blank? ? 0 : elements.map{|element| element.antibodies.count}.inject(0, :+)
+      end
+
+      y_function = Proc.new do |element|
+        %w(Total)
       end
       self.get_statistic(y_function, x_function, aggregation_function)
     end
