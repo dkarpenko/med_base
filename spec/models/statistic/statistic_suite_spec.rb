@@ -11,7 +11,7 @@ describe Statistic::StatisticSuite do
       input_elements = %w(B B a b c)
       input_elements.each {|element| subject.add_element(element)  }
 
-      subject.normalize_data[:headers].should eq(input_elements.sort.uniq)
+      subject.normalize_data[:headers].should eq(input_elements.sort.uniq.insert(0, ''))
     end
 
     it 'result rows and columns should be sorted by first element' do
@@ -21,9 +21,10 @@ describe Statistic::StatisticSuite do
 
       normalizing_results  = subject.normalize_data
 
-      ordered_input_elements = input_elements.sort
+      ordered_input_elements = %w(B C D E G a b c d g h)
+      ordered_input_headers = %w(B C D E G a b c d g h).insert(0,'')
 
-      normalizing_results[:headers].should eq(ordered_input_elements)
+      normalizing_results[:headers].should eq(ordered_input_headers)
       normalizing_results[:statistic_data].collect{|row| row[0]}.should eq(ordered_input_elements)
 
     end

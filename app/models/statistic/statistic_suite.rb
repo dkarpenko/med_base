@@ -26,14 +26,14 @@ class Statistic::StatisticSuite
   end
 
 
-  def normalize_data
+  def normalize_data(first_header = '')
     all_keys= @statistic_rows.collect { |row_key, row_data| row_data.row_keys }.flatten.compact.uniq.sort
 
     statistic_data = @statistic_rows.sort.map do |row_key, row_data|
       row_data.normalize_row(all_keys).insert(0, row_key)
     end
 
-    {headers: all_keys, statistic_data: statistic_data}
+    {headers: all_keys.insert(0, first_header), statistic_data: statistic_data}
   end
 
 
