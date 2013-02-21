@@ -15,7 +15,7 @@
       %td
         %div= t('antibodies.object.attributes.q_mark.'+ antibody.reaction_mark.to_s) if antibody.reaction_mark
         %div= antibody.reaction_score_score if antibody.reaction_score_score
-        %div= antibody.reaction_score_percentage + "%" if antibody.reaction_score_percentage
+        %div= antibody.reaction_score_percentage.to_s + "%" if antibody.reaction_score_percentage
       %td
         %span.tooltip_element{href: "#", 'data-title'=> antibody.result }= truncate(antibody.result)
 
