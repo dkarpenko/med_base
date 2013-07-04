@@ -82,6 +82,6 @@ gem 'will_paginate_mongoid'
 gem 'bootstrap-will_paginate'
 
 # Table Sorting
-gem 'jquery-tablesorter', git: 'git://github.com/linjunpop/jquery-tablesorter-rails.git', branch: 'master'
+gem 'jquery-tablesorter'
 
 gem 'rack-methodoverride-with-params'
