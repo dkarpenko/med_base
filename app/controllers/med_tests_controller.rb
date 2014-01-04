@@ -55,9 +55,9 @@ class MedTestsController < ApplicationController
 
   def destroy
     @med_test = MedTest.find(params[:id])
-    @med_test.destroy
+    @med_test.destroy unless @med_test.nil?
 
-    redirect_to med_tests_url
+    redirect_to med_tests_path(page: params[:page])
 
   end
 
