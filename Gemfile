@@ -4,9 +4,6 @@ ruby '2.1.0'
 gem 'rails', '4.0.2'
 gem 'mongoid'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -40,12 +37,6 @@ gem 'devise', '>= 2.1.2'
 gem 'jquery-rails'
 gem 'modernizr-rails'
 
-# Stylesheet libs
-# gem 'blueprint-rails'
-
-# Ajax request CoffeeScript support
-# gem 'coffeebeans'
-
 # Heroku deployment requirements
 group :production do
   gem 'newrelic_rpm'
@@ -53,21 +44,6 @@ group :production do
    #gem 'pg'
 end
 
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
 
 gem 'haml-rails'
 gem 'haml'
