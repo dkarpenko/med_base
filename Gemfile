@@ -1,8 +1,7 @@
 source  'https://rubygems.org'
-ruby '2.0.0'
 
 gem 'thin'
-gem 'rails'
+gem 'rails', '4.0.2'
 gem 'mongoid'
 
 # Bundle edge Rails instead:
@@ -11,19 +10,18 @@ gem 'mongoid'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 group :test do
   gem 'capybara'
   gem 'cucumber-rails'
-  gem 'rspec-rails'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'mongoid-rspec', :require => false
@@ -58,7 +56,7 @@ end
 
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# gem 'bcrypt-ruby'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -82,6 +80,6 @@ gem 'will_paginate_mongoid'
 gem 'bootstrap-will_paginate'
 
 # Table Sorting
-gem 'jquery-tablesorter', git: 'git://github.com/linjunpop/jquery-tablesorter-rails.git', branch: 'master'
+gem 'jquery-tablesorter'
 
 gem 'rack-methodoverride-with-params'

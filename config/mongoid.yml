@@ -15,10 +15,6 @@ development:
         # (default: false)
         # safe: false
 
-        # Change the default consistency model to :eventual or :strong.
-        # :eventual will send reads to secondaries, :strong sends everything
-        # to master. (default: :eventual)
-        consistency: :strong
   # Configure Mongoid specific options. (optional)
   options:
     # Configuration for whether or not to allow access to fields that do
@@ -37,9 +33,6 @@ development:
     # Preload all models in development, needed when models use
     # inheritance. (default: false)
     # preload_models: false
-
-    # Protect id and type from mass assignment. (default: true)
-    protect_sensitive_fields: true
 
     # Raise an error when performing a #find and the document is not found.
     # (default: true)

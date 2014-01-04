@@ -3,7 +3,7 @@ class AntibodiesController < ApplicationController
   before_filter :load_med_test
   before_filter :load_antibody, only: [:edit, :update, :destroy]
 
-  before_filter :prepate_antibody_names, only: [:edit , :new]
+  before_filter :prepate_antibody_names, only: [:edit, :new]
 
 
   def new
@@ -20,7 +20,7 @@ class AntibodiesController < ApplicationController
   def create
 
     @med_test = MedTest.find(params[:med_test_id])
-    @antibody = @med_test.antibodies.create!(params[:antibody])
+    @antibody = @med_test.antibodies.create!(antibody_params)
     redirect_to edit_med_test_url(@med_test), :notice => "Antibody added!"
 
   end
@@ -29,7 +29,7 @@ class AntibodiesController < ApplicationController
   # PUT /antibodies/1.json
   def update
 
-    @antibody.update_attributes(params[:antibody])
+    @antibody.update_attributes(antibody_params)
     redirect_to edit_med_test_url(@med_test), :notice => "Antibody updated!"
 
   end
@@ -54,8 +54,12 @@ class AntibodiesController < ApplicationController
 
   def prepate_antibody_names
     # TODO Cache this values
-    @antibody_names = MedTest.limit(200).collect{|t| t.antibodies }.flatten().collect{|a| a.name }.uniq.compact.sort
+    @antibody_names = MedTest.limit(200).collect { |t| t.antibodies }.flatten().collect { |a| a.name }.uniq.compact.sort
   end
 
+  private
+  def antibody_params
+    params.require(:antibody).permit(:reaction_score_score, :reaction_score_percentage, :reaction_mark, :result, :description, :name)
+  end
 
 end

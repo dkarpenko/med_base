@@ -21,7 +21,7 @@ class MedTestsController < ApplicationController
   end
 
   def create
-    @med_test = MedTest.new(params[:med_test])
+    @med_test = MedTest.new(med_test_params)
 
     if @med_test.save
       unless  params[:default_antibodies].blank?
@@ -45,7 +45,7 @@ class MedTestsController < ApplicationController
   def update
     @med_test = MedTest.find(params[:id])
 
-    if @med_test.update_attributes(params[:med_test])
+    if @med_test.update_attributes(med_test_params)
       redirect_to edit_med_test_path(@med_test), notice: 'Med test was successfully updated.'
     else
       render action: "edit"
@@ -69,6 +69,13 @@ class MedTestsController < ApplicationController
     @test_purposes = latest_med_tests.collect { |t| t.test_purpose }.uniq.compact.sort
     @antibody_names = latest_med_tests.collect { |t| t.antibodies }.flatten().collect { |a| a.name }.uniq.compact.sort
 
+  end
+
+
+  private
+
+  def med_test_params
+    params.require(:med_test).permit(:test_purpose, :body_ids, :antibodies, :patient_name, :conclusion,:description, :doctor_client, :tracking_number, :test_date)
   end
 
 end

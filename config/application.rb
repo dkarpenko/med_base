@@ -2,7 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require "action_controller/railtie"
 require "action_mailer/railtie"
-require "active_resource/railtie"
 require "rails/test_unit/railtie"
 require "sprockets/railtie"
 
@@ -37,6 +36,7 @@ module Med
     config.middleware.swap Rack::MethodOverride, Rack::MethodOverrideWithParams
 
 
+    I18n.enforce_available_locales = true
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
