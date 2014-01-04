@@ -21,12 +21,11 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner', :require => false
-  gem 'spork'
 end
 
 group :development, :test do

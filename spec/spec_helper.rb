@@ -1,39 +1,20 @@
 require 'rubygems'
-require 'spork'
-#uncomment the following line to use spork with the debugger
-#require 'spork/ext/ruby-debug'
 
-Spork.prefork do
-  if !ENV['DRB'] && ENV['COVERAGE']
-    require 'simplecov'
-    SimpleCov.start 'rails'
-  end
+if !ENV['DRB'] && ENV['COVERAGE']
+  require 'simplecov'
+  SimpleCov.start 'rails'
+end
 
-  ENV["RAILS_ENV"] ||= 'test'
-  require File.expand_path("../../config/environment", __FILE__)
-  require 'rspec/rails'
-  require 'mongoid-rspec'
-  require 'rspec/autorun'
-  require 'factory_girl'
+ENV["RAILS_ENV"] ||= 'test'
+require File.expand_path("../../config/environment", __FILE__)
+require 'rspec/rails'
+require 'mongoid-rspec'
+require 'rspec/autorun'
+require 'factory_girl'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
-  Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
-
-  require 'database_cleaner'
-
-end
-
-Spork.each_run do
-  if ENV['DRB'] && ENV['COVERAGE']
-    require 'simplecov'
-    SimpleCov.start 'rails'
-  end
-
-end
-
-Spork.after_each_run do
-end
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 
 RSpec.configure do |config|
@@ -57,6 +38,9 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  require 'database_cleaner'
+
+  require 'database_cleaner'
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.orm = "mongoid"
@@ -65,5 +49,6 @@ RSpec.configure do |config|
   config.before(:each) do
     DatabaseCleaner.clean
   end
+
 
 end
