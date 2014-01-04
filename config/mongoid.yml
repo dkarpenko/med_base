@@ -57,8 +57,6 @@ test:
       database: med_test
       hosts:
         - localhost:27017
-      options:
-        consistency: :strong
 production:
   sessions:
     default:
