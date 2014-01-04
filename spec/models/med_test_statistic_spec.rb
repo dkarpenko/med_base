@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe MedTestStatistic do
   subject { described_class.new }
-  describe 'Attribute accessors' do
-    it { should be_accessible :headers }
-    it { should be_accessible :statistic_data }
-  end
 
   describe 'Validation' do
     [:type_key, :headers, :statistic_data].each do |attribute|
