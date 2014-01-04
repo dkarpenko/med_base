@@ -1,6 +1,5 @@
 source  'https://rubygems.org'
 
-gem 'thin'
 gem 'rails', '4.0.2'
 gem 'mongoid'
 
