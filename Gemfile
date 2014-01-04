@@ -3,6 +3,7 @@ ruby '2.1.0'
 
 gem 'rails', '4.0.2'
 gem 'mongoid'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
