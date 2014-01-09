@@ -3,6 +3,7 @@ class MedTestStatistic
   include Mongoid::Timestamps
 
   field :type_key, type: String
+  field :key_is_antibody, type: Boolean
 
   field :headers, type: Array, default: []
   validates_presence_of :headers, allow_nil: false

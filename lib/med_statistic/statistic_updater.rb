@@ -11,10 +11,10 @@ module MedStatistic
         elements.blank? ? 0 : elements.size
       end
 
-      MedTestStatistic.find_or_create_by({type_key: 'antibodies_date'}).update_attributes(antibody_statistic(x_function, aggregation_function))
-      MedTestStatistic.find_or_create_by({type_key: 'antibodies_test_type'}).update_attributes(test_purpose_statistic(x_function, aggregation_function))
+      MedTestStatistic.find_or_create_by({type_key: 'antibodies_date', key_is_antibody: true}).update_attributes(antibody_statistic(x_function, aggregation_function))
+      MedTestStatistic.find_or_create_by({type_key: 'antibodies_test_type', key_is_antibody: false}).update_attributes(test_purpose_statistic(x_function, aggregation_function))
 
-      MedTestStatistic.find_or_create_by({type_key: 'tests_total'}).update_attributes(tests_total(x_function))
+      MedTestStatistic.find_or_create_by({type_key: 'tests_total', key_is_antibody: false}).update_attributes(tests_total(x_function))
     end
 
 

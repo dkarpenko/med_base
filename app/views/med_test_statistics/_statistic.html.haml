@@ -7,5 +7,9 @@
   %tbody
     - statistic.statistic_data.each do |statistic_row|
       %tr
-        - statistic_row.each do |statistic_cell|
-          %td= statistic_cell
+        - statistic_row.each_with_index do |statistic_cell, index|
+          %td
+            - if index == 0 && statistic.key_is_antibody
+              = link_to statistic_cell, med_tests_path(antibody_filter: statistic_cell)
+            - else
+              = statistic_cell

@@ -3,7 +3,12 @@ class MedTestsController < ApplicationController
   before_filter :prepare_dictionary_data, only: [:edit, :new]
 
   def index
-    @med_tests = MedTest.desc(:created_at).paginate(:page => params[:page], :per_page => 30)
+    if params[:antibody_filter]
+      @med_tests = MedTest.where('antibodies.name' => params[:antibody_filter]).desc(:created_at).paginate(:page => params[:page])
+    else
+      @med_tests = MedTest.desc(:created_at).paginate(:page => params[:page])
+    end
+
   end
 
   def show
