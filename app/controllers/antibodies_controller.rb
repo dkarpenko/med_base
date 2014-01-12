@@ -59,7 +59,7 @@ class AntibodiesController < ApplicationController
 
   private
   def antibody_params
-    params.require(:antibody).permit(:reaction_score_score, :reaction_score_percentage, :reaction_mark, :result, :description, :name)
+    params.require(:antibody).permit(:name)
   end
 
 end

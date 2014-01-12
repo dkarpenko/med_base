@@ -1,1 +1,0 @@
-$REACTION_MARKS_Q = [:positive, :negative, :falsely_positive, :falsely_neitive]
