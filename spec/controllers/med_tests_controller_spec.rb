@@ -15,13 +15,13 @@ describe MedTestsController do
 
   describe "create antibody" do
     it "should add antibodies to MedTest if they has been passed" do
-      post :create, {med_test: {tracking_number: Time.now.to_s}, default_antibodies: "AA,BB,CC"}
+      post :create, {med_test: {tracking_number: Time.now.to_s}, antibodies: "AA,BB,CC"}
       assigns(:med_test).antibodies.count.should eq(3)
     end
 
     [nil, ""].each do |parameter|
       it "should not add antibodies to MedTest if nil/empty string been passed" do
-        post :create, {med_test: {tracking_number: Time.now.to_s}, default_antibodies: parameter}
+        post :create, {med_test: {tracking_number: Time.now.to_s}, antibodies: parameter}
         assigns(:med_test).antibodies.count.should eq(0)
       end
     end

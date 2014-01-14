@@ -1,6 +1,7 @@
 class MedTestsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :prepare_dictionary_data, only: [:edit, :new]
+  before_filter :load_med_test, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:antibody_filter]
@@ -11,55 +12,32 @@ class MedTestsController < ApplicationController
 
   end
 
-  def show
-    @med_test = MedTest.find(params[:id])
-  end
-
   def new
-    @med_test = MedTest.new
-    @med_test.test_date = Date.today
-  end
-
-
-  def edit
-    @med_test = MedTest.find(params[:id])
+    @med_test = MedTest.new(test_date: Date.today)
   end
 
   def create
     @med_test = MedTest.new(med_test_params)
 
-    if @med_test.save
-      unless  params[:default_antibodies].blank?
-        params[:default_antibodies].split(',').each do |antibody_name|
-          @med_test.antibodies.create!({name: antibody_name})
-        end
-      end
-
+    if @med_test.save && save_antibodies(@med_test)
 
       redirect_to params[:save_create] ? new_med_test_path :
                       edit_med_test_path(@med_test), notice: 'Med test was successfully created.'
-
     else
-      render action: "new"
+      render action: :new
     end
   end
 
 
-# PUT /med_tests/1
-# PUT /med_tests/1.json
   def update
-    @med_test = MedTest.find(params[:id])
-
-    if @med_test.update_attributes(med_test_params)
+    if @med_test.update_attributes(med_test_params) && (save_antibodies(@med_test))
       redirect_to edit_med_test_path(@med_test), notice: 'Med test was successfully updated.'
     else
-      render action: "edit"
+      render action: :edit
     end
   end
 
-
   def destroy
-    @med_test = MedTest.find(params[:id])
     @med_test.destroy unless @med_test.nil?
 
     redirect_to med_tests_path(page: params[:page])
@@ -78,6 +56,19 @@ class MedTestsController < ApplicationController
 
 
   private
+  def load_med_test
+    @med_test = MedTest.find(params[:id])
+  end
+
+  def save_antibodies(med_test)
+    med_test.antibodies.delete_all unless med_test.antibodies.empty?
+
+    unless params[:antibodies].blank?
+      params[:antibodies].split(',').each do |antibody_name|
+        med_test.antibodies.create!({name: antibody_name})
+      end
+    end
+  end
 
   def med_test_params
     params.require(:med_test).permit(:test_purpose, :body_ids, :antibodies, :patient_name, :conclusion, :description, :doctor_client, :tracking_number, :test_date)

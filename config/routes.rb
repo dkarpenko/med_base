@@ -7,9 +7,7 @@ Med::Application.routes.draw do
 
 
   devise_scope :user do
-    resources :med_tests do
-      resources :antibodies
-    end
+    resources :med_tests
   end
 
   resources :med_test_statistics

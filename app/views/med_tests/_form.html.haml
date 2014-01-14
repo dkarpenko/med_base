@@ -28,14 +28,17 @@
       = f.label(:doctor_client, t('med_tests.object.attributes.test_purpose'), class: 'control-label')
       .controls
         = f.text_field(:test_purpose, :class => 'input-xlarge typeahead data-api', "data-provide" => "typeahead", "data-source" =>  @test_purposes.to_json, autocomplete: "off")
-    - if @med_test.new_record?
-      .control-group
-        = f.label(:tracking_number, t('med_tests.object.attributes.antibodies'), class: 'control-label')
-        .controls
-          .input-large.uneditable-input.tokenahead
-            .measurer
-            .tokens
-            %input{ name: "default_antibodies", type: "text", "data-source" =>  @antibody_names.to_json, "data-provide" => "tokenahead", autocomplete: "off", class: "data-api tokenahead-input"}
+    .control-group
+      = f.label(:antibodies, t('med_tests.object.attributes.antibodies'), class: 'control-label')
+      .controls
+        .input-large.uneditable-input.tokenahead
+          .measurer
+          .tokens
+            -  @med_test.antibodies.each do |antibody|
+              %a.tag
+                %span.close &times;
+                %span=antibody.name
+          %input{ name: :antibodies, type: "text", "data-source" =>  @antibody_names.to_json, "data-provide" => "tokenahead", autocomplete: "off", class: "data-api tokenahead-input"}
 
     .control-group
       = f.label(:description, t('med_tests.object.attributes.description'), class: 'control-label')
@@ -45,12 +48,6 @@
       = f.label(:patients_namepatient_name, t('med_tests.object.attributes.patient_name'), class: 'control-label')
       .controls
         = f.text_field(:patient_name, :class => 'input-xlarge', autocomplete: "off")
-
-    -unless @med_test.new_record?
-      .control-group
-        %label.control-label= t('antibodies.views.index')
-        .controls
-          = render :partial => 'antibodies/list', :locals => {:antibodies => @med_test.antibodies}
 
       .control-group
         = f.label(:conclusion, t('med_tests.object.attributes.conclusion'), class: 'control-label')
@@ -63,13 +60,3 @@
       = link_to(t('view.common.cancel'), :back,  class: "btn")
       = link_to(t('view.common.back_to_list'), med_tests_path, class: "btn pull-right")
 
-
-#modal_dialog.modal.fade.hide
-  .modal-header
-    %button.close{ type: 'button', 'data-dismiss' => 'modal' } &times;
-    %h3
-  .modal-body
-    %p
-  .modal-footer
-    %a.btn{ id: 'modal-close', 'data-dismiss' => 'modal' }= t('view.common.cancel')
-    %button.btn.btn-primary{ id: 'modal-submit' }= t('view.common.save_changes')
