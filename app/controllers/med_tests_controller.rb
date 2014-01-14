@@ -74,16 +74,13 @@ class MedTestsController < ApplicationController
     @test_purposes = latest_med_tests.collect { |t| t.test_purpose }.uniq.compact.sort
     @antibody_names = latest_med_tests.collect { |t| t.antibodies }.flatten().collect { |a| a.name }.uniq.compact.sort
 
-
-    @test_purposes = latest_med_tests.collect { |t| t.created_at }.uniq.compact.sort
-
   end
 
 
   private
 
   def med_test_params
-    params.require(:med_test).permit(:test_purpose, :body_ids, :antibodies, :patient_name, :conclusion,:description, :doctor_client, :tracking_number, :test_date)
+    params.require(:med_test).permit(:test_purpose, :body_ids, :antibodies, :patient_name, :conclusion, :description, :doctor_client, :tracking_number, :test_date)
   end
 
 end
