@@ -32,24 +32,9 @@ ru:
   antibodies:
     views:
       index: "Список антител"
-      new:
-        title: "Новое антитело"
-        link: "Добавить антитело"
-      edit:
-        title: "Изменение антитела"
     object:
       attributes:
         name: "Имя антитела"
-        description: "Описание"
-        result: "Результат"
-        reaction_score: "Количественная оценка"
-        reaction_mark: "Качественная оценка"
-        mark: "Оценка"
-        q_mark:
-          positive: "положительно"
-          negative: "отрицательно"
-          falsely_positive: "ложно-положительно"
-          falsely_neitive: "ложно-отрицательно"
   med_tests:
     views:
       index: "Исследования"
@@ -72,7 +57,6 @@ ru:
         antibodies: "Антитела"
         conclusion: "Заключение"
         test_purpose: "Тип исследования"
-        patient_name: "Имя пациента"
   view:
     common:
       show: "Просмотреть"

@@ -71,7 +71,7 @@ class MedTestsController < ApplicationController
   end
 
   def med_test_params
-    params.require(:med_test).permit(:test_purpose, :body_ids, :antibodies, :patient_name, :conclusion, :description, :doctor_client, :tracking_number, :test_date)
+    params.require(:med_test).permit(:test_purpose, :body_ids, :antibodies, :conclusion, :description, :doctor_client, :tracking_number, :test_date)
   end
 
 end

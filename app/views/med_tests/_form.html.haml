@@ -44,15 +44,11 @@
       = f.label(:description, t('med_tests.object.attributes.description'), class: 'control-label')
       .controls
         = f.text_area(:description, :class => 'input-xlarge', rows: 3)
-    .control-group
-      = f.label(:patients_namepatient_name, t('med_tests.object.attributes.patient_name'), class: 'control-label')
-      .controls
-        = f.text_field(:patient_name, :class => 'input-xlarge', autocomplete: "off")
 
-      .control-group
-        = f.label(:conclusion, t('med_tests.object.attributes.conclusion'), class: 'control-label')
-        .controls
-          = f.text_area(:conclusion, :class => 'input-xlarge', rows: 3)
+    .control-group
+      = f.label(:conclusion, t('med_tests.object.attributes.conclusion'), class: 'control-label')
+      .controls
+        = f.text_area(:conclusion, :class => 'input-xlarge', rows: 3)
 
     .form-actions
       = f.submit(t('med_tests.views.edit.save_and_create'), class: 'btn btn-primary', name: "save_create") if @med_test.new_record?

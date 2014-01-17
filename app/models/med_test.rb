@@ -10,7 +10,6 @@ class MedTest
   field :doctor_client, type: String
   field :description, type: String
   field :conclusion, type: String
-  field :patient_name, type: String
   field :test_purpose, type: String
 
   attr_accessor :body_ids
