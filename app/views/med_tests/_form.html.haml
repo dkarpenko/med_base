@@ -23,11 +23,11 @@
     .control-group
       = f.label(:doctor_client, t('med_tests.object.attributes.doctor_client'), class: 'control-label')
       .controls
-        = f.text_field(:doctor_client, :class => 'input-xlarge typeahead data-api', "data-provide" => "typeahead", "data-source" =>  @doctors_names.to_json, autocomplete: "off")
+        = f.text_field(:doctor_client, :class => 'input-xlarge typeahead data-api', "data-provide" => "typeahead", "data-source" =>  @autosuggest.doctors_names.to_json, autocomplete: "off")
     .control-group
       = f.label(:doctor_client, t('med_tests.object.attributes.test_purpose'), class: 'control-label')
       .controls
-        = f.text_field(:test_purpose, :class => 'input-xlarge typeahead data-api', "data-provide" => "typeahead", "data-source" =>  @test_purposes.to_json, autocomplete: "off")
+        = f.text_field(:test_purpose, :class => 'input-xlarge typeahead data-api', "data-provide" => "typeahead", "data-source" =>  @autosuggest.test_purposes.to_json, autocomplete: "off")
     .control-group
       = f.label(:antibodies, t('med_tests.object.attributes.antibodies'), class: 'control-label')
       .controls
@@ -38,7 +38,7 @@
               %a.tag
                 %span.close &times;
                 %span=antibody.name
-          %input{ name: :antibodies, type: "text", "data-source" =>  @antibody_names.to_json, "data-provide" => "tokenahead", autocomplete: "off", class: "data-api tokenahead-input"}
+          %input{ name: :antibodies, type: "text", "data-source" =>  @autosuggest.antibody_names.to_json, "data-provide" => "tokenahead", autocomplete: "off", class: "data-api tokenahead-input"}
 
     .control-group
       = f.label(:description, t('med_tests.object.attributes.description'), class: 'control-label')

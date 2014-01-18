@@ -45,13 +45,7 @@ class MedTestsController < ApplicationController
   end
 
   def prepare_dictionary_data
-    # TODO Cache this values
-    latest_med_tests = MedTest.limit(1000).sort(created_at: -1)
-
-    @doctors_names = latest_med_tests.collect { |t| t.doctor_client }.uniq.compact.sort
-    @test_purposes = latest_med_tests.collect { |t| t.test_purpose }.uniq.compact.sort
-    @antibody_names = latest_med_tests.collect { |t| t.antibodies }.flatten().collect { |a| a.name }.uniq.compact.sort
-
+    @autosuggest = MedTestCache.first_or_initialize
   end
 
 
